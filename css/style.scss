@@ -1,0 +1,310 @@
+// Colors
+// Primary
+$LimeGreen: hsl(163, 72%, 41%);
+$BrightRed: hsl(356, 69%, 56%);
+
+$Facebook: hsl(195, 100%, 50%);
+$Twitter: hsl(203, 89%, 53%);
+$Instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+$YouTube: hsl(348, 97%, 39%);
+
+// Dark Theme
+$ToggleI: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+
+// Light Theme
+$ToggleII: hsl(230, 22%, 74%);
+
+// Neutral
+// Dark Theme
+$VeryDarkBlue_BG: hsl(230, 17%, 14%);
+$VeryDarkBlue_Top_BG_Patt: hsl(232, 30%, 25%);
+$DarkDesaturatedBlue_CardBG: hsl(228, 28%, 20%);
+$DarkDesaturatedBlue_CardBG_II: hsl(232, 35%, 25%);
+$DesaturatedBlue_Text: hsl(228, 34%, 66%);
+$White_Text: hsl(0, 0%, 100%);
+
+// Light Theme
+$White_BG: hsl(0, 0%, 100%);
+$VeryPaleBlue_TopBG_Patt: hsl(225, 100%, 98%);
+$LightGrayishBlue_CardBG: hsl(227, 47%, 96%);
+$LightGrayishBlue_CardBG_II: hsl(228, 12%, 44%);
+$DarkGrayishBlue_Text: hsl(228, 12%, 44%);
+$VeryDarkBlue_Text: hsl(230, 17%, 14%);
+
+:root {
+  --main-bg-color: hsl(230, 17%, 14%);
+  --headTop-bg-color: hsl(232, 30%, 25%);
+  --whiteText: hsl(0, 0%, 100%);
+  --card-bg-color: hsl(228, 28%, 20%);
+  --card-bg-colorHover: hsl(232, 35%, 25%);
+  --button-bg: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  --button-fg: hsl(228, 28%, 20%);
+}
+
+body{
+  background-color: var(--main-bg-color);
+  padding: 10px;
+  font-family: 'Inter', sans-serif;
+}
+
+.headingTop {
+  position: relative;
+  background-color: var(--headTop-bg-color);
+  height: 300px;
+  border-radius: 20px;
+  margin: 5px;
+  overflow: hidden;
+}
+.headingTopII {
+  position:relative;
+	//top: 1px;
+	margin: 1px;
+	height: 298px;
+  border-radius: 20px;
+	background-color: var(--headTop-bg-color);
+	animation: colorRunnerRev 0.45s ease-in-out;
+  //box-shadow: 120px -25px 16px -10px #003aff;
+	&:hover{
+		animation: colorRunner 0.45s ease-in-out;
+		background-image: linear-gradient(to bottom left, var(--headTop-bg-color), var(--headTop-bg-color));
+	}
+  h1 {
+    position: relative;
+    top: 40px;
+    left: 100px;
+    color: var(--whiteText);
+    font-size: 40px;
+    font-weight: 600;
+  }
+  h2 {
+    position: relative;
+    top: 40px;
+    left: 100px;
+    color: $DesaturatedBlue_Text;
+    font-size: 20px;
+    padding-top: 10px;
+    font-weight: 600;
+  }
+  /* Rounded sliders */
+  .switch {
+    position: absolute;
+    width: 50px;
+    height: 31px;
+    right: 10px;
+    top: 40px;
+    input {
+      opacity: 0;
+      //display: none;
+    }
+    .slider {
+      position: absolute; cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: var(--button-bg);
+      -webkit-transition: .4s; transition: .4s;
+    }
+    .slider:before {
+      position: absolute; content: "";
+      height: 26px; width: 26px; left: 2px; bottom: 2px;
+      background-color: var(--button-fg);
+      -webkit-transition: .4s; transition: .4s;
+    }
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+    input:focus + .slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+    input:checked + .slider:before {
+      -webkit-transform: translateX(19px); -ms-transform: translateX(19px);
+      transform: translateX(19px);
+    }
+    .slider.round {
+      border-radius: 15px;
+    }
+    .slider.round:before {
+      border-radius: 50%;
+    }
+  }
+}
+
+@keyframes colorRunner {
+	0% {box-shadow: 120px -25px 16px -10px #003aff;}
+	25% {box-shadow: 120px 25px 16px -10px #003aff;}
+	50% {box-shadow: -120px 25px 16px -10px #003aff;}
+	75% {box-shadow: -120px -25px 16px -10px #003aff;}
+	100% {box-shadow: 120px -25px 16px -10px #003aff;}
+}
+@keyframes colorRunnerRev {
+	100% {box-shadow: 120px -25px 16px -10px #003aff;}
+	75% {box-shadow: 120px 25px 16px -10px #003aff;}
+	50% {box-shadow: -120px 25px 16px -10px #003aff;}
+	25% {box-shadow: -120px -25px 16px -10px #003aff;}
+	0% {box-shadow: 120px -25px 16px -10px #003aff;}
+}
+
+.bodyTop {
+  top: -150px;
+  position: relative;
+  left: 100px;
+  .bigCard {
+    margin: 10px;
+    min-width: 250px;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: var(--card-bg-color);
+    .clH1 {
+      position: relative;
+      margin: 25px auto;
+      text-align: center;
+      img {
+        display: inline-block;
+      }
+      h1 {
+        display: inline-block;
+        color: $DesaturatedBlue_Text;
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+    h2 {
+      color: var(--whiteText);
+      text-align: center;
+      font-size: 56px;
+      font-weight: 700;
+    }
+    h3 {
+      color: $DesaturatedBlue_Text;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 18px;
+      font-weight: 200;
+      margin: 5px;
+    }
+    .clH4 {
+      position: relative;
+      margin: 25px auto;
+      text-align: center;
+      img {
+        display: inline-block;
+      }
+      h4 {
+        display: inline-block;
+        color: $LimeGreen;
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+    &:hover {
+      background-color: var(--card-bg-colorHover);
+      cursor: pointer;
+    }
+  }
+}
+
+.faceBook {
+  border-top: 5px solid $Facebook;
+}
+.twitter {
+  border-top: 5px solid $Twitter;
+}
+.instaGram {
+  position: relative;
+  border-top: 5px solid transparent;
+  background-image: linear-gradient(var(--card-bg-color), var(--card-bg-color)), $Instagram;
+  border-radius: 5px;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  &:hover {
+    background-image: linear-gradient(var(--card-bg-colorHover), var(--card-bg-colorHover)), $Instagram;
+    cursor: pointer;
+  }
+}
+.youTube {
+  border-top: 5px solid $YouTube;
+}
+
+.headingBottom {
+  position: relative;
+  top: -150px;
+  h1 {
+    position: relative;
+    top: 40px;
+    left: 100px;
+    color: var(--whiteText);
+    font-size: 32px;
+    font-weight: 600;
+  }
+}
+
+.bodyBottom {
+  position: relative;
+  top: -75px;
+  left: 100px;
+  max-width: 1200px;
+  .smallCard {
+    position: relative;
+    min-height: 120px;
+    margin: 10px;
+    width: 250px;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: var(--card-bg-color);
+    h1 {
+      color: $DesaturatedBlue_Text;
+      margin-top: 20px;
+      margin-left: 30px;
+      display: inline-block;
+      float: left;
+      position: relative;
+    }
+    img {
+      position: relative;
+      display: inline-block;
+      float: right;
+      margin-top: 20px;
+      margin-right: 30px;
+    }
+    h2 {
+      position: absolute;
+      display: inline-block;
+      color: var(--whiteText);
+      margin-bottom: 20px;
+      margin-left: 30px;
+      font-size: 32px;
+      //float: left;
+      //clear: both;
+      bottom: 0px;
+      left: 0px;
+    }
+    .upDown {
+      position: absolute;
+      display: inline-block;
+      margin-bottom: 20px;
+      margin-right: 30px;
+      //margin-top: 20px;
+      float: right;
+      bottom: 0px;
+      right: 0px;
+      img {
+        position: relative;
+        float: left;
+        margin: 3px;
+      }
+      h3 {
+        position: relative;
+        display: inline-block;
+        color: $LimeGreen;
+        float: right;
+      }
+    }
+    &:hover {
+      background-color: var(--card-bg-colorHover);
+      cursor: pointer;
+    }
+  }
+}
+
+.attribution {
+  color: var(--whiteText);
+}

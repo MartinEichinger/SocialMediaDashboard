@@ -1,0 +1,339 @@
+:root {
+  --main-bg-color: hsl(230, 17%, 14%);
+  --headTop-bg-color: hsl(232, 30%, 25%);
+  --whiteText: hsl(0, 0%, 100%);
+  --card-bg-color: hsl(228, 28%, 20%);
+  --card-bg-colorHover: hsl(232, 35%, 25%);
+  --button-bg: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  --button-fg: hsl(228, 28%, 20%);
+}
+
+body {
+  background-color: var(--main-bg-color);
+  padding: 10px;
+  font-family: 'Inter', sans-serif;
+}
+
+.headingTop {
+  position: relative;
+  background-color: var(--headTop-bg-color);
+  height: 300px;
+  border-radius: 20px;
+  margin: 5px;
+  overflow: hidden;
+}
+
+.headingTopII {
+  position: relative;
+  margin: 1px;
+  height: 298px;
+  border-radius: 20px;
+  background-color: var(--headTop-bg-color);
+  animation: colorRunnerRev 0.45s ease-in-out;
+  /* Rounded sliders */
+}
+
+.headingTopII:hover {
+  animation: colorRunner 0.45s ease-in-out;
+  background-image: linear-gradient(to bottom left, var(--headTop-bg-color), var(--headTop-bg-color));
+}
+
+.headingTopII h1 {
+  position: relative;
+  top: 40px;
+  left: 100px;
+  color: var(--whiteText);
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.headingTopII h2 {
+  position: relative;
+  top: 40px;
+  left: 100px;
+  color: #8b97c6;
+  font-size: 20px;
+  padding-top: 10px;
+  font-weight: 600;
+}
+
+.headingTopII .switch {
+  position: absolute;
+  width: 50px;
+  height: 31px;
+  right: 10px;
+  top: 40px;
+}
+
+.headingTopII .switch input {
+  opacity: 0;
+}
+
+.headingTopII .switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: var(--button-bg);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.headingTopII .switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 2px;
+  bottom: 2px;
+  background-color: var(--button-fg);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.headingTopII .switch input:checked + .slider {
+  background-color: #2196F3;
+}
+
+.headingTopII .switch input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+.headingTopII .switch input:checked + .slider:before {
+  -webkit-transform: translateX(19px);
+  -ms-transform: translateX(19px);
+  transform: translateX(19px);
+}
+
+.headingTopII .switch .slider.round {
+  border-radius: 15px;
+}
+
+.headingTopII .switch .slider.round:before {
+  border-radius: 50%;
+}
+
+@keyframes colorRunner {
+  0% {
+    box-shadow: 120px -25px 16px -10px #003aff;
+  }
+  25% {
+    box-shadow: 120px 25px 16px -10px #003aff;
+  }
+  50% {
+    box-shadow: -120px 25px 16px -10px #003aff;
+  }
+  75% {
+    box-shadow: -120px -25px 16px -10px #003aff;
+  }
+  100% {
+    box-shadow: 120px -25px 16px -10px #003aff;
+  }
+}
+
+@keyframes colorRunnerRev {
+  100% {
+    box-shadow: 120px -25px 16px -10px #003aff;
+  }
+  75% {
+    box-shadow: 120px 25px 16px -10px #003aff;
+  }
+  50% {
+    box-shadow: -120px 25px 16px -10px #003aff;
+  }
+  25% {
+    box-shadow: -120px -25px 16px -10px #003aff;
+  }
+  0% {
+    box-shadow: 120px -25px 16px -10px #003aff;
+  }
+}
+
+.bodyTop {
+  top: -150px;
+  position: relative;
+  left: 100px;
+}
+
+.bodyTop .bigCard {
+  margin: 10px;
+  min-width: 250px;
+  border-radius: 5px;
+  display: inline-block;
+  background-color: var(--card-bg-color);
+}
+
+.bodyTop .bigCard .clH1 {
+  position: relative;
+  margin: 25px auto;
+  text-align: center;
+}
+
+.bodyTop .bigCard .clH1 img {
+  display: inline-block;
+}
+
+.bodyTop .bigCard .clH1 h1 {
+  display: inline-block;
+  color: #8b97c6;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.bodyTop .bigCard h2 {
+  color: var(--whiteText);
+  text-align: center;
+  font-size: 56px;
+  font-weight: 700;
+}
+
+.bodyTop .bigCard h3 {
+  color: #8b97c6;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 18px;
+  font-weight: 200;
+  margin: 5px;
+}
+
+.bodyTop .bigCard .clH4 {
+  position: relative;
+  margin: 25px auto;
+  text-align: center;
+}
+
+.bodyTop .bigCard .clH4 img {
+  display: inline-block;
+}
+
+.bodyTop .bigCard .clH4 h4 {
+  display: inline-block;
+  color: #1db489;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.bodyTop .bigCard:hover {
+  background-color: var(--card-bg-colorHover);
+  cursor: pointer;
+}
+
+.faceBook {
+  border-top: 5px solid deepskyblue;
+}
+
+.twitter {
+  border-top: 5px solid #1ca0f2;
+}
+
+.instaGram {
+  position: relative;
+  border-top: 5px solid transparent;
+  background-image: linear-gradient(var(--card-bg-color), var(--card-bg-color)), linear-gradient(to right, #fdc468, #df4996);
+  border-radius: 5px;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.instaGram:hover {
+  background-image: linear-gradient(var(--card-bg-colorHover), var(--card-bg-colorHover)), linear-gradient(to right, #fdc468, #df4996);
+  cursor: pointer;
+}
+
+.youTube {
+  border-top: 5px solid #c4032a;
+}
+
+.headingBottom {
+  position: relative;
+  top: -150px;
+}
+
+.headingBottom h1 {
+  position: relative;
+  top: 40px;
+  left: 100px;
+  color: var(--whiteText);
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.bodyBottom {
+  position: relative;
+  top: -75px;
+  left: 100px;
+  max-width: 1200px;
+}
+
+.bodyBottom .smallCard {
+  position: relative;
+  min-height: 120px;
+  margin: 10px;
+  width: 250px;
+  border-radius: 5px;
+  display: inline-block;
+  background-color: var(--card-bg-color);
+}
+
+.bodyBottom .smallCard h1 {
+  color: #8b97c6;
+  margin-top: 20px;
+  margin-left: 30px;
+  display: inline-block;
+  float: left;
+  position: relative;
+}
+
+.bodyBottom .smallCard img {
+  position: relative;
+  display: inline-block;
+  float: right;
+  margin-top: 20px;
+  margin-right: 30px;
+}
+
+.bodyBottom .smallCard h2 {
+  position: absolute;
+  display: inline-block;
+  color: var(--whiteText);
+  margin-bottom: 20px;
+  margin-left: 30px;
+  font-size: 32px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.bodyBottom .smallCard .upDown {
+  position: absolute;
+  display: inline-block;
+  margin-bottom: 20px;
+  margin-right: 30px;
+  float: right;
+  bottom: 0px;
+  right: 0px;
+}
+
+.bodyBottom .smallCard .upDown img {
+  position: relative;
+  float: left;
+  margin: 3px;
+}
+
+.bodyBottom .smallCard .upDown h3 {
+  position: relative;
+  display: inline-block;
+  color: #1db489;
+  float: right;
+}
+
+.bodyBottom .smallCard:hover {
+  background-color: var(--card-bg-colorHover);
+  cursor: pointer;
+}
+
+.attribution {
+  color: var(--whiteText);
+}
